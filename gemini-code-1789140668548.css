@@ -1,0 +1,234 @@
+/* SECCIÓN CHECKOUT & CARRITO DE COMPRAS */
+.checkout-section {
+  margin-top: 50px;
+}
+
+.cart-box {
+  background-color: var(--card-bg);
+  border: 2px solid var(--accent-yellow);
+  border-radius: var(--border-radius);
+  padding: 25px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+}
+
+.cart-title {
+  color: var(--accent-yellow);
+  font-size: 1.8rem;
+  margin-bottom: 5px;
+}
+
+.cart-subtitle {
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+
+.cart-items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+.empty-msg {
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.cart-item {
+  background-color: #222;
+  padding: 12px 15px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cart-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.05rem;
+}
+
+.btn-remove-item {
+  background: none;
+  border: none;
+  color: #ff5555;
+  cursor: pointer;
+  font-size: 1.1rem;
+  margin-left: 10px;
+}
+
+.cart-item-details {
+  font-size: 0.85rem;
+  color: #bbb;
+  padding-left: 10px;
+}
+
+.cart-item-details.text-danger {
+  color: #ff7675;
+}
+
+.cart-summary {
+  margin-bottom: 20px;
+}
+
+.summary-line {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.btn-checkout-trigger {
+  width: 100%;
+  background-color: var(--accent-yellow);
+  color: #000;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.1s, background-color 0.2s;
+}
+
+.btn-checkout-trigger:hover {
+  background-color: #e0a800;
+}
+
+.checkout-note {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* MODAL OVERLAY */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.85);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.modal-content {
+  background-color: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: var(--border-radius);
+  width: 100%;
+  max-width: 480px;
+  padding: 25px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+.delivery-options {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-delivery {
+  flex: 1;
+  background: #333;
+  color: #fff;
+  border: 1px solid #444;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn-delivery.active {
+  background: var(--accent-yellow);
+  color: #000;
+  font-weight: bold;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 0.85rem;
+  color: var(--accent-yellow);
+  text-transform: uppercase;
+}
+
+.form-group input, .form-group textarea {
+  background-color: #222;
+  border: 1px solid #444;
+  color: #fff;
+  padding: 10px;
+  border-radius: 6px;
+  font-family: inherit;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 60px;
+}
+
+.modal-summary {
+  background: #222;
+  padding: 12px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.modal-summary .summary-line {
+  font-size: 1rem;
+}
+
+.modal-summary .summary-line.total {
+  font-size: 1.3rem;
+  color: var(--accent-yellow);
+  border-top: 1px solid #444;
+  padding-top: 8px;
+}
+
+.transfer-info {
+  background: #2a2a2a;
+  border-left: 4px solid var(--accent-yellow);
+  padding: 10px;
+  font-size: 0.9rem;
+}
+
+.btn-send-whatsapp {
+  background-color: #25d366;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: bold;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
