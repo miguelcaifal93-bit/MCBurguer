@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MC Burguers - Pedido Digital</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="brand">
+      <h1>MC BURGUERS</h1>
+      <p class="tagline">Hamburguesas Smash & Combos</p>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- SECCIÓN HAMBURGUESAS -->
+    <section class="menu-section">
+      <h2 class="section-title">🍔 Elige tu Hamburguesa</h2>
+      <div class="grid">
+
+        <!-- 1. Nacho Smash Provolone -->
+        <article class="card burger-card" data-name="Nacho Smash Provolone">
+          <div class="card-img-wrapper">
+            <img src="images/nacho-smash-provolone.jpg" alt="Nacho Smash Provolone">
+          </div>
+          <div class="card-content">
+            <h3>Nacho Smash Provolone</h3>
+            <p class="description">Base de mayonesa ahumada, Doritos, doble carne smash con queso provolone, panceta, Doritos, mayonesa ahumada y pan brioche tostado.</p>
+
+            <div class="options-group">
+              <label class="group-label">Elegí tu Combo:</label>
+              <div class="combo-selector">
+                <label class="radio-btn">
+                  <input type="radio" name="combo-nacho-provolone" value="Chico (1 medallón 110g)" data-price="14000" checked>
+                  <span>Chico (1 medallón 110g) - $14.000</span>
+                </label>
+                <label class="radio-btn">
+                  <input type="radio" name="combo-nacho-provolone" value="Mediano (2 medallones 110g)" data-price="18000">
+                  <span>Mediano (2 medallones 110g) - $18.000</span>
+                </label>
+                <label class="radio-btn">
+                  <input type="radio" name="combo-nacho-provolone" value="Premium (2 medallones 90g)" data-price="20000">
+                  <span>Premium (2 medallones 90g) - $20.000</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="options-group">
+              <label class="group-label">➕ Agregar Toppings Extra:</label>
+              <div class="checkbox-group extras-group">
+                <label class="check-btn"><input type="checkbox" value="Medallón extra" data-price="3000"> Medallón extra (+$3.000)</label>
+                <label class="check-btn"><input type="checkbox" value="Panceta extra" data-price="1500"> Panceta extra (+$1.500)</label>
+                <label class="check-btn"><input type="checkbox" value="Queso cheddar extra" data-price="1000"> Queso cheddar extra (+$1.000)</label>
+                <label class="check-btn"><input type="checkbox" value="Queso provolone extra" data-price="1000"> Queso provolone extra (+$1.000)</label>
+                <label class="check-btn"><input type="checkbox" value="Cebolla caramelizada extra" data-price="800"> Cebolla caramelizada extra (+$800)</label>
+                <label class="check-btn"><input type="checkbox" value="Doritos extra" data-price="800"> Doritos extra (+$800)</label>
+                <label class="check-btn"><input type="checkbox" value="Huevo frito" data-price="800"> Huevo frito (+$800)</label>
+                <label class="check-btn"><input type="checkbox" value="Salsa BBQ extra" data-price="500"> Salsa BBQ extra (+$500)</label>
+                <label class="check-btn"><input type="checkbox" value="Mayo ahumada extra" data-price="500"> Mayo ahumada extra (+$500)</label>
+              </div>
+            </div>
+
+            <div class="options-group remove-group">
+              <label class="group-label">❌ Quitar Ingredientes:</label>
+              <div class="checkbox-group removes-group">
+                <label class="check-btn remove"><input type="checkbox" value="Sin Mayonesa Ahumada"> Sin Mayonesa Ahumada</label>
+                <label class="check-btn remove"><input type="checkbox" value="Sin Doritos"> Sin Doritos</label>
+                <label class="check-btn remove"><input type="checkbox" value="Sin Panceta"> Sin Panceta</label>
+                <label class="check-btn remove"><input type="checkbox" value="Sin Queso Provolone"> Sin Queso Provolone</label>
+              </div>
+            </div>
+
+            <div class="card-actions">
+              <div class="quantity-counter">
+                <button type="button" class="btn-qty" onclick="adjustQty(this, -1)">-</button>
+                <span class="qty-number">1</span>
+                <button type="button" class="btn-qty" onclick="adjustQty(this, 1)">+</button>
+              </div>
+              <button type="button" class="btn-confirm" onclick="addBurgerToCart(this)">
+                <span class="btn-text">Confirmar Combo</span>
+                <span class="btn-check">✓ Agregado</span>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 2. Legendaria -->
+        <article class="card burger-card" data-name="Legendaria">
+          <div class="card-img-wrapper">
+            <img src="images/legendaria.jpg" alt="Legendaria">
+          </div>
+          <div class="card-content">
+            <h3>Legendaria</h3>
+            <p class="description">Base de salsa MCB (mayonesa, mostaza, ketchup y especias), medallón de carne smash con queso cheddar, cebolla, pan, salsa MCB, carne smash con queso cheddar, lechuga, cebolla, salsa MCB y pan brioche tostado.</p>
+
+            <div class="options-group">
+              <label class="group-label">Elegí tu Combo:</label>
+              <div class="combo-selector">
+                <label class="radio-btn">
+                  <input type="radio" name="combo-legendaria" value="Chico (1 medallón 110g)" data-price="14000" checked>
+                  <span>Chico (1 medallón 110g) - $14.000</span>
+                </label>
+                <label class="radio-btn">
+                  <input type="radio" name="combo-legendaria" value="Mediano (2 medallones 110g)" data-price="18000">
+                  <span>Mediano (2 medallones 110g) - $18.000</span>
+                </label>
+                <label class="radio-btn">
+                  <input type="radio" name="combo-legendaria" value="Premium (2 medallones 90g)" data-price="20000">
+                  <span>Premium (2 medallones 90g) - $20.000</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="options-group">
+              <label class="group-label">➕ Agregar Toppings Extra:</label>
+              <div class="checkbox-group extras-group">
+                <label class="check-btn"><input type="checkbox" value="Medallón extra" data-price="3000"> Medallón extra (+$3.000)</label>
+                <label class="check-btn"><input type="checkbox" value="Panceta extra" data-price="1500"> Panceta extra (+$1.500)</label>
+                <label class="check-btn"><input type="checkbox" value="Queso cheddar extra" data-price="1000"> Queso cheddar extra (+$1.000)</label>
+                <label class="check-btn"><input type="checkbox" value="Queso provolone extra" data-price="1000"> Queso provolone extra (+$1.000)</label>
+                <label class="check-btn"><input type="checkbox" value="Cebolla caramelizada extra" data-price="800"> Cebolla caramelizada extra (+$800)</label>
+                <label class="check-btn"><input type="checkbox" value="Doritos extra" data-price="800"> Doritos extra (+$800)</label>
+                <label class="check-btn"><input type="checkbox" value="Huevo frito" data-price="800"> Huevo frito (+$800)</label>
+                <label class="check-btn"><input type="checkbox" value="Salsa BBQ extra" data-price="500"> Salsa BBQ extra (+$500)</label>
+                <label class="check-btn"><input type="checkbox" value="Mayo ahumada extra" data-price="500"> Mayo ahumada extra (+$500)</label>
+              </div>
+            </div>
+
+            <div class="options-group remove-group">
+              <label class="group-label">❌ Quitar Ingredientes:</label>
+              <div class="checkbox-group removes-group">
+                <label class="check-btn remove"><input type="checkbox" value="Sin Cebolla"> Sin Cebolla</label>
+                <label class="check-btn remove"><input type="checkbox" value="Sin Lechuga"> Sin Lechuga</label>
+                <label class="check-btn remove"><input type="checkbox" value="Sin Salsa MCB"> Sin Salsa MCB</label>
+                <label class="check-btn remove"><input type="checkbox" value="Sin Queso Cheddar"> Sin Queso Cheddar</label>
+              </div>
+            </div>
+
+            <div class="card-actions">
+              <div class="quantity-counter">
+                <button type="button" class="btn-qty" onclick="adjustQty(this, -1)">-</button>
+                <span class="qty-number">1</span>
+                <button type="button" class="btn-qty" onclick="adjustQty(this, 1)">+</button>
+              </div>
+              <button type="button" class="btn-confirm" onclick="addBurgerToCart(this)">
+                <span class="btn-text">Confirmar Combo</span>
+                <span class="btn-check">✓ Agregado</span>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 3. Monster -->
+        <article class="card burger-card" data-name="Monster">
+          <div class="card-img-wrapper">
+            <img src="images/monster.jpg" alt="Monster">
+          </div>
+          <div class="card-content">
+            <h3>Monster</h3>
+            <p class="description">Base de mayonesa ahumada, doble carne smash con queso cheddar doble, panceta doble y cebolla caramelizada, mayonesa ahumada y pan brioche tostado.</p>
+
+            <div class="options-group">
+              <label class="group-label">Elegí tu Combo:</label>
+              <div class="combo-selector">
+                <label class="radio-btn">
+                  <input type="radio" name="combo-monster" value="Chico (1 medallón 110g)" data-price="14000" checked>
+                  <span>Chico (1 medallón 110g) - $14.000</span>
+                </label>
+                <label class="radio-btn">
+                  <input type="radio" name="combo-monster" value="Mediano (2 medallones 110g)" data-price="18000">
+                  <span>Mediano (2 medallones 110g) - $18.000</span>
+                </label>
+                <label class="radio-btn">
+                  <input type="radio" name="combo-monster" value="Premium (2 medallones 90g)" data-price="20000">
+                  <span>Premium (2 medallones 90g) - $20.000</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="options-group">
+              <label class="group-label">➕ Agregar Toppings Extra:</label>
+              <div class="checkbox-group extras-group">
+                <label class="check-btn"><input type="checkbox" value="Medallón extra" data-price="3000"> Medallón extra (+$3.000)</label>
+                <label class="check-btn"><input type="checkbox" value="Panceta extra" data-price="1500"> Panceta extra (+$1.500)</label>
+                <label class="check-btn"><input type="checkbox" value="Queso cheddar extra" data-price="1000"> Queso cheddar extra (+$1.000)</label>
+                <label class="check-btn"><input type="checkbox" value="Queso provolone extra" data-price="1000"> Queso provolone extra (+$1.000)</label>
+                <label class="check-btn"><input type="checkbox" value="Cebolla caramelizada extra" data-price="800"> Cebolla caramelizada extra (+$800)</label>
+                <label class="check-btn"><input type="checkbox" value="Doritos extra" data-price="800"> Doritos extra (+$800)</label>
+                <label class="check-btn"><input type="checkbox" value="Huevo frito" data-price="800"> Huevo frito (+$800)</label>
+                <label class="check-btn"><input type="checkbox" value="Salsa BBQ extra" data-price="500"> Salsa BBQ extra (+$500)</label>
+                <label class="check-btn"><input type="checkbox" value="Mayo ahumada extra" data-price="500"> Mayo ahumada extra (+$500)</label>
+              </div>
+            </div>
+
+            <div class="options-group remove-group">
+              <label class="group-label">❌ Quitar Ingredientes:</label>
+              <div class="checkbox-group removes-group">
+                <label class="check-btn remove"><input type="checkbox" value="Sin Mayonesa Ahumada"> Sin Mayonesa Ahumada</label>
+                <label class="check-btn remove"><input type="checkbox" value="Sin Cebolla Caramelizada"> Sin Cebolla Caramelizada</label>
+                <label class="check-btn remove"><input type="checkbox" value="Sin Panceta"> Sin Panceta</label>
+                <label class="check-btn remove"><input type="checkbox" value="Sin Queso Cheddar"> Sin Queso Cheddar</label>
+              </div>
+            </div>
+
+            <div class="card-actions">
+              <div class="quantity-counter">
+                <button type="button" class="btn-qty" onclick="adjustQty(this, -1)">-</button>
+                <span class="qty-number">1</span>
+                <button type="button" class="btn-qty" onclick="adjustQty(this, 1)">+</button>
+              </div>
+              <button type="button" class="btn-confirm" onclick="addBurgerToCart(this)">
+                <span class="btn-text">Confirmar Combo</span>
+                <span class="btn-check">✓ Agregado</span>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 4. BBQ Brutal -->
+        <article class="card burger-card" data-name="BBQ Brutal">
+          <div class="card-img-wrapper">
+            <img src="images/bbq-brutal.jpg" alt="BBQ Brutal">
+          </div>
+          <div class="card-content">
+            <h3>BBQ Brutal</h3>
+            <p class="description">Base de queso crema, doble carne smash, queso cheddar doble, panceta, cebolla caramelizada, barbacoa y pan brioche tostado.</p>
+
+            <div class="options-group">
+              <label class="group-label">Elegí tu Combo:</label>
+              <div class="combo-selector">
+                <label class="radio-btn">
+                  <input type="radio" name="combo-bbq" value="Chico (1 medallón 110g)" data-price="14000" checked>
+                  <span>Chico (1 medallón 110g) - $14.000</span>
+                </label>
+                <label class="radio-btn">
+                  <input type="radio" name="combo-bbq" value="Mediano (2 medallones 110g)" data-price="18000">
+                  <span>Mediano (2 medallones 110g) - $18.000</span>
+                </label>
+                <label class="radio-btn">
+                  <input type="radio" name="combo-bbq" value="Premium (2 medallones 90g)" data-price="20000">
+                  <span>Premium (2 medallones 90g) - $20.000</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="options-group">
+              <label class="group-label">➕ Agregar Toppings Extra:</label>
+              <div class="checkbox-group extras-group">
+                <label class="check-btn"><input type="checkbox" value="Medallón extra" data-price="3000"> Medallón extra (+$3.000)</label>
+                <label class="check-btn"><input type="checkbox" value="Panceta extra" data-price="1500"> Panceta extra (+$1.500)</label>
+                <label class="check-btn"><input type="checkbox" value="Queso cheddar extra" data-price="1000"> Queso cheddar extra (+$1.000)</label>
+                <label class="check-btn"><input type="checkbox" value="Queso provolone extra" data-price="1000"> Queso provolone extra (+$1.000)</label>
+                <label class="check-btn"><input type="checkbox" value="Cebolla caramelizada extra" data-price="800"> Cebolla caramelizada extra (+$800)</label>
+                <label class="check-btn"><input type="checkbox" value="Doritos extra" data-price="800"> Doritos extra (+$800)</label>
+                <label class="check-btn"><input type="checkbox" value="Huevo frito" data-price="800"> Huevo frito (+$800)</label>
+                <label class="check-btn"><input type="checkbox" value="Salsa BBQ extra" data-price="500"> Salsa BBQ extra (+$500)</label>
+                <label class="check-btn"><input type="checkbox" value="Mayo ahumada extra" data-price="500"> Mayo ahumada extra (+$500)</label>
+              </div>
+            </div>
+
+            <div class="options-group remove-group">
+              <label class="group-label">❌ Quitar Ingredientes:</label>
+              <div class="checkbox-group removes-group">
+                <label class="check-btn remove"><input type="checkbox" value="Sin Queso Crema"> Sin Queso Crema</label>
+                <label class="check-btn remove"><input type="checkbox" value="Sin Barbacoa"> Sin Barbacoa</label>
+                <label class="check-btn remove"><input type="checkbox" value="Sin Panceta"> Sin Panceta</label>
+                <label class="check-btn remove"><input type="checkbox" value="Sin Cebolla Caramelizada"> Sin Cebolla Caramelizada</label>
+              </div>
+            </div>
+
+            <div class="card-actions">
+              <div class="quantity-counter">
+                <button type="button" class="btn-qty" onclick="adjustQty(this, -1)">-</button>
+                <span class="qty-number">1</span>
+                <button type="button" class="btn-qty" onclick="adjustQty(this, 1)">+</button>
+              </div>
+              <button type="button" class="btn-confirm" onclick="addBurgerToCart(this)">
+                <span class="btn-text">Confirmar Combo</span>
+                <span class="btn-check">✓ Agregado</span>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 5. Nacho Smash Cheddar -->
+        <article class="card burger-card" data-name="Nacho Smash Cheddar">
+          <div class="card-img-wrapper">
+            <img src="images/nacho-smash-cheddar.jpg" alt="Nacho Smash Cheddar">
+          </div>
+          <div class="card-content">
+            <h3>Nacho Smash Cheddar</h3>
+            <p class="description">Base de mayonesa ahumada, Doritos, doble carne smash con cheddar, panceta, Doritos, mayonesa ahumada y pan brioche tostado.</p>
+
+            <div class="options-group">
+              <label class="group-label">Elegí tu Combo:</label>
+              <div class="combo-selector">
+                <label class="radio-btn">
+                  <input type="radio" name="combo-nacho-cheddar" value="Chico (1 medallón 110g)" data-price="14000" checked>
+                  <span>Chico (1 medallón 110g) - $14.000</span>
+                </label>
+                <label class="radio-btn">
+                  <input type="radio" name="combo-nacho-cheddar" value="Mediano (2 medallones 110g)" data-price="18000">
+                  <span>Mediano (2 medallones 110g) - $18.000</span>
+                </label>
+                <label class="radio-btn">
+                  <input type="radio" name="combo-nacho-cheddar" value="Premium (2 medallones 90g)" data-price="20000">
+                  <span>Premium (2 medallones 90g) - $20.000</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="options-group">
+              <label class="group-label">➕ Agregar Toppings Extra:</label>
+              <div class="checkbox-group extras-group">
+                <label class="check-btn"><input type="checkbox" value="Medallón extra" data-price="3000"> Medallón extra (+$3.000)</label>
+                <label class="check-btn"><input type="checkbox" value="Panceta extra" data-price="1500"> Panceta extra (+$1.500)</label>
+                <label class="check-btn"><input type="checkbox" value="Queso cheddar extra" data-price="1000"> Queso cheddar extra (+$1.000)</label>
+                <label class="check-btn"><input type="checkbox" value="Queso provolone extra" data-price="1000"> Queso provolone extra (+$1.000)</label>
+                <label class="check-btn"><input type="checkbox" value="Cebolla caramelizada extra" data-price="800"> Cebolla caramelizada extra (+$800)</label>
+                <label class="check-btn"><input type="checkbox" value="Doritos extra" data-price="800"> Doritos extra (+$800)</label>
+                <label class="check-btn"><input type="checkbox" value="Huevo frito" data-price="800"> Huevo frito (+$800)</label>
+                <label class="check-btn"><input type="checkbox" value="Salsa BBQ extra" data-price="500"> Salsa BBQ extra (+$500)</label>
+                <label class="check-btn"><input type="checkbox" value="Mayo ahumada extra" data-price="500"> Mayo ahumada extra (+$500)</label>
+              </div>
+            </div>
+
+            <div class="options-group remove-group">
+              <label class="group-label">❌ Quitar Ingredientes:</label>
+              <div class="checkbox-group removes-group">
+                <label class="check-btn remove"><input type="checkbox" value="Sin Mayonesa Ahumada"> Sin Mayonesa Ahumada</label>
+                <label class="check-btn remove"><input type="checkbox" value="Sin Doritos"> Sin Doritos</label>
+                <label class="check-btn remove"><input type="checkbox" value="Sin Panceta"> Sin Panceta</label>
+                <label class="check-btn remove"><input type="checkbox" value="Sin Queso Cheddar"> Sin Queso Cheddar</label>
+              </div>
+            </div>
+
+            <div class="card-actions">
+              <div class="quantity-counter">
+                <button type="button" class="btn-qty" onclick="adjustQty(this, -1)">-</button>
+                <span class="qty-number">1</span>
+                <button type="button" class="btn-qty" onclick="adjustQty(this, 1)">+</button>
+              </div>
+              <button type="button" class="btn-confirm" onclick="addBurgerToCart(this)">
+                <span class="btn-text">Confirmar Combo</span>
+                <span class="btn-check">✓ Agregado</span>
+              </button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- SECCIÓN SALSAS -->
+    <section class="menu-section sauces-section">
+      <div class="section-header">
+        <h2 class="section-title">🥣 Para potenciar tu pedido: Salsas</h2>
+        <p class="promo-subtitle">Sumá otra salsa por $3.000 cada una.</p>
+      </div>
+
+      <div class="sauces-grid">
+        <!-- 12 Salsas -->
+        <article class="sauce-card" data-name="Salsa Barbacoa" data-price="3000">
+          <div class="sauce-info"><h3>Barbacoa</h3><span class="price">$3.000</span></div>
+          <div class="card-actions">
+            <div class="quantity-counter"><button type="button" class="btn-qty" onclick="adjustQty(this, -1)">-</button><span class="qty-number">1</span><button type="button" class="btn-qty" onclick="adjustQty(this, 1)">+</button></div>
+            <button type="button" class="btn-confirm" onclick="addSimpleItemToCart(this)"><span class="btn-text">+ Agregar</span><span class="btn-check">✓</span></button>
+          </div>
+        </article>
+
+        <article class="sauce-card" data-name="Salsa Guacamole" data-price="3000">
+          <div class="sauce-info"><h3>Guacamole</h3><span class="price">$3.000</span></div>
+          <div class="card-actions">
+            <div class="quantity-counter"><button type="button" class="btn-qty" onclick="adjustQty(this, -1)">-</button><span class="qty-number">1</span><button type="button" class="btn-qty" onclick="adjustQty(this, 1)">+</button></div>
+            <button type="button" class="btn-confirm" onclick="addSimpleItemToCart(this)"><span class="btn-text">+ Agregar</span><span class="btn-check">✓</span></button>
+          </div>
+        </article>
+
+        <article class="sauce-card" data-name="Salsa Alioli" data-price="3000">
+          <div class="sauce-info"><h3>Alioli</h3><span class="price">$3.000</span></div>
+          <div class="card-actions">
+            <div class="quantity-counter"><button type="button" class="btn-qty" onclick="adjustQty(this, -1)">-</button><span class="qty-number">1</span><button type="button" class="btn-qty" onclick="adjustQty(this, 1)">+</button></div>
+            <button type="button" class="btn-confirm" onclick="addSimpleItemToCart(this)"><span class="btn-text">+ Agregar</span><span class="btn-check">✓</span></button>
+          </div>
+        </article>
+
+        <article class="sauce-card" data-name="Salsa Big Tau" data-price="3000">
+          <div class="sauce-info"><h3>Big Tau</h3><span class="price">$3.000</span></div>
+          <div class="card-actions">
+            <div class="quantity-counter"><button type="button" class="btn-qty" onclick="adjustQty(this, -1)">-</button><span class="qty-number">1</span><button type="button" class="btn-qty" onclick="adjustQty(this, 1)">+</button></div>
+            <button type="button" class="btn-confirm" onclick="addSimpleItemToCart(this)"><span class="btn-text">+ Agregar</span><span class="btn-check">✓</span></button>
+          </div>
+        </article>
+
+        <article class="sauce-card" data-name="Salsa Mayonesa ahumada" data-price="3000">
+          <div class="sauce-info"><h3>Mayonesa ahumada</h3><span class="price">$3.000</span></div>
+          <div class="card-actions">
+            <div class="quantity-counter"><button type="button" class="btn-qty" onclick="adjustQty(this, -1)">-</button><span class="qty-number">1</span><button type="button" class="btn-qty" onclick="adjustQty(this, 1)">+</button></div>
+            <button type="button" class="btn-confirm" onclick="addSimpleItemToCart(this)"><span class="btn-text">+ Agregar</span><span class="btn-check">✓</span></button>
+          </div>
+        </article>
+
+        <article class="sauce-card" data-name="Salsa Ketchup" data-price="3000">
+          <div class="sauce-info"><h3>Ketchup</h3><span class="price">$3.000</span></div>
+          <div class="card-actions">
+            <div class="quantity-counter"><button type="button" class="btn-qty" onclick="adjustQty(this, -1)">-</button><span class="qty-number">1</span><button type="button" class="btn-qty" onclick="adjustQty(this, 1)">+</button></div>
+            <button type="button" class="btn-confirm" onclick="addSimpleItemToCart(this)"><span class="btn-text">+ Agregar</span><span class="btn-check">✓</span></button>
+          </div>
+        </article>
+
+        <article class="sauce-card" data-name="Salsa Mostaza" data-price="3000">
+          <div class="sauce-info"><h3>Mostaza</h3><span class="price">$3.000</span></div>
+          <div class="card-actions">
+            <div class="quantity-counter"><button type="button" class="btn-qty" onclick="adjustQty(this, -1)">-</button><span class="qty-number">1</span><button type="button" class="btn-qty" onclick="adjustQty(this, 1)">+</button></div>
+            <button type="button" class="btn-confirm" onclick="addSimpleItemToCart(this)"><span class="btn-text">+ Agregar</span><span class="btn-check">✓</span></button>
+          </div>
+        </article>
+
+        <article class="sauce-card" data-name="Salsa Sabor asado" data-price="3000">
+          <div class="sauce-info"><h3>Sabor asado</h3><span class="price">$3.000</span></div>
+          <div class="card-actions">
+            <div class="quantity-counter"><button type="button" class="btn-qty" onclick="adjustQty(this, -1)">-</button><span class="qty-number">1</span><button type="button" class="btn-qty" onclick="adjustQty(this, 1)">+</button></div>
+            <button type="button" class="btn-confirm" onclick="addSimpleItemToCart(this)"><span class="btn-text">+ Agregar</span><span class="btn-check">✓</span></button>
+          </div>
+        </article>
+
+        <article class="sauce-card" data-name="Salsa Picante" data-price="3000">
+          <div class="sauce-info"><h3>Picante</h3><span class="price">$3.000</span></div>
+          <div class="card-actions">
+            <div class="quantity-counter"><button type="button" class="btn-qty" onclick="adjustQty(this, -1)">-</button><span class="qty-number">1</span><button type="button" class="btn-qty" onclick="adjustQty(this, 1)">+</button></div>
+            <button type="button" class="btn-confirm" onclick="addSimpleItemToCart(this)"><span class="btn-text">+ Agregar</span><span class="btn-check">✓</span></button>
+          </div>
+        </article>
+
+        <article class="sauce-card" data-name="Salsa Mayonesa picante" data-price="3000">
+          <div class="sauce-info"><h3>Mayonesa picante</h3><span class="price">$3.000</span></div>
+          <div class="card-actions">
+            <div class="quantity-counter"><button type="button" class="btn-qty" onclick="adjustQty(this, -1)">-</button><span class="qty-number">1</span><button type="button" class="btn-qty" onclick="adjustQty(this, 1)">+</button></div>
+            <button type="button" class="btn-confirm" onclick="addSimpleItemToCart(this)"><span class="btn-text">+ Agregar</span><span class="btn-check">✓</span></button>
+          </div>
+        </article>
+
+        <article class="sauce-card" data-name="Salsa Mostaza con miel" data-price="3000">
+          <div class="sauce-info"><h3>Mostaza con miel</h3><span class="price">$3.000</span></div>
+          <div class="card-actions">
+            <div class="quantity-counter"><button type="button" class="btn-qty" onclick="adjustQty(this, -1)">-</button><span class="qty-number">1</span><button type="button" class="btn-qty" onclick="adjustQty(this, 1)">+</button></div>
+            <button type="button" class="btn-confirm" onclick="addSimpleItemToCart(this)"><span class="btn-text">+ Agregar</span><span class="btn-check">✓</span></button>
+          </div>
+        </article>
+
+        <article class="sauce-card" data-name="Salsa Cheddar" data-price="3000">
+          <div class="sauce-info"><h3>Cheddar</h3><span class="price">$3.000</span></div>
+          <div class="card-actions">
+            <div class="quantity-counter"><button type="button" class="btn-qty" onclick="adjustQty(this, -1)">-</button><span class="qty-number">1</span><button type="button" class="btn-qty" onclick="adjustQty(this, 1)">+</button></div>
+            <button type="button" class="btn-confirm" onclick="addSimpleItemToCart(this)"><span class="btn-text">+ Agregar</span><span class="btn-check">✓</span></button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- SECCIÓN PROMOCIONES / COMBOS ESPECIALES -->
+    <section class="menu-section promos-section">
+      <div class="section-header">
+        <h2 class="section-title">🔥 Combos Especiales para Compartir</h2>
+        <p class="promo-subtitle">Para compartir | Son 5 combos disponibles. Elegí una opción y súmala directamente a tu pedido.</p>
+      </div>
+
+      <div class="grid promos-grid">
+        <article class="card promo-card" data-name="Combo Parejas (2 adultos)" data-price="33000">
+          <div class="promo-badge">2 Personas</div>
+          <div class="card-content">
+            <h3>🔴 Combo Parejas (2 adultos)</h3>
+            <div class="price">$33.000</div>
+            <p class="description">2 burgers medianas a elección (220g c/u) + papas fritas para compartir (350g)</p>
+            <div class="card-actions">
+              <div class="quantity-counter"><button type="button" class="btn-qty" onclick="adjustQty(this, -1)">-</button><span class="qty-number">1</span><button type="button" class="btn-qty" onclick="adjustQty(this, 1)">+</button></div>
+              <button type="button" class="btn-confirm" onclick="addSimpleItemToCart(this)"><span class="btn-text">Sumar al Pedido</span><span class="btn-check">✓ Agregado</span></button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card promo-card" data-name="Combo Amigos (4 personas)" data-price="64000">
+          <div class="promo-badge">4 Personas</div>
+          <div class="card-content">
+            <h3>🍔 Combo Amigos (4 personas)</h3>
+            <div class="price">$64.000</div>
+            <p class="description">4 burgers medianas a elección (220g c/u) + Megaporción de papas fritas (700g)</p>
+            <div class="card-actions">
+              <div class="quantity-counter"><button type="button" class="btn-qty" onclick="adjustQty(this, -1)">-</button><span class="qty-number">1</span><button type="button" class="btn-qty" onclick="adjustQty(this, 1)">+</button></div>
+              <button type="button" class="btn-confirm" onclick="addSimpleItemToCart(this)"><span class="btn-text">Sumar al Pedido</span><span class="btn-check">✓ Agregado</span></button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card promo-card" data-name="Combo Kids (1 niño)" data-price="10000">
+          <div class="promo-badge">Niños</div>
+          <div class="card-content">
+            <h3>🐥 Combo Kids (1 niño)</h3>
+            <div class="price">$10.000</div>
+            <p class="description">1 cheeseburger kids (medallón 90g + doble cheddar) + papas kids (90g)</p>
+            <div class="card-actions">
+              <div class="quantity-counter"><button type="button" class="btn-qty" onclick="adjustQty(this, -1)">-</button><span class="qty-number">1</span><button type="button" class="btn-qty" onclick="adjustQty(this, 1)">+</button></div>
+              <button type="button" class="btn-confirm" onclick="addSimpleItemToCart(this)"><span class="btn-text">Sumar al Pedido</span><span class="btn-check">✓ Agregado</span></button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card promo-card" data-name="Combo Kids x2 (2 niños)" data-price="17000">
+          <div class="promo-badge">2 Niños</div>
+          <div class="card-content">
+            <h3>🔥 Combo Kids x2 (2 niños)</h3>
+            <div class="price">$17.000</div>
+            <p class="description">2 cheeseburgers kids + 2 porciones de papas kids</p>
+            <div class="card-actions">
+              <div class="quantity-counter"><button type="button" class="btn-qty" onclick="adjustQty(this, -1)">-</button><span class="qty-number">1</span><button type="button" class="btn-qty" onclick="adjustQty(this, 1)">+</button></div>
+              <button type="button" class="btn-confirm" onclick="addSimpleItemToCart(this)"><span class="btn-text">Sumar al Pedido</span><span class="btn-check">✓ Agregado</span></button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card promo-card" data-name="Combo Familia (2 adultos y 2 niños)" data-price="54000">
+          <div class="promo-badge">Familiar</div>
+          <div class="card-content">
+            <h3>👨‍👩‍👧‍👦 Combo Familia (2 adultos y 2 niños)</h3>
+            <div class="price">$54.000</div>
+            <p class="description">2 burgers medianas (220g) + 2 cheeseburgers kids + gran bandeja de papas fritas (550g)</p>
+            <div class="card-actions">
+              <div class="quantity-counter"><button type="button" class="btn-qty" onclick="adjustQty(this, -1)">-</button><span class="qty-number">1</span><button type="button" class="btn-qty" onclick="adjustQty(this, 1)">+</button></div>
+              <button type="button" class="btn-confirm" onclick="addSimpleItemToCart(this)"><span class="btn-text">Sumar al Pedido</span><span class="btn-check">✓ Agregado</span></button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- SECCIÓN BEBIDAS -->
+    <section class="menu-section">
+      <h2 class="section-title">🥤 Bebidas</h2>
+      <div class="grid">
+        <article class="card" data-name="Sprite Sabor Original" data-price="2500">
+          <div class="card-img-wrapper beverage"><img src="images/sprite-original.jpg" alt="Sprite Sabor Original"></div>
+          <div class="card-content">
+            <h3>Sprite Sabor Original</h3>
+            <p class="description">Lata 354 ml - Sabor Lima-Limón.</p>
+            <div class="card-actions">
+              <div class="quantity-counter"><button type="button" class="btn-qty" onclick="adjustQty(this, -1)">-</button><span class="qty-number">1</span><button type="button" class="btn-qty" onclick="adjustQty(this, 1)">+</button></div>
+              <button type="button" class="btn-confirm" onclick="addSimpleItemToCart(this)"><span class="btn-text">Agregar</span><span class="btn-check">✓ Agregado</span></button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-name="Sprite Cero" data-price="2500">
+          <div class="card-img-wrapper beverage"><img src="images/sprite-zero.jpg" alt="Sprite Cero"></div>
+          <div class="card-content">
+            <h3>Sprite Cero</h3>
+            <p class="description">Lata 354 ml - Sin Azúcar.</p>
+            <div class="card-actions">
+              <div class="quantity-counter"><button type="button" class="btn-qty" onclick="adjustQty(this, -1)">-</button><span class="qty-number">1</span><button type="button" class="btn-qty" onclick="adjustQty(this, 1)">+</button></div>
+              <button type="button" class="btn-confirm" onclick="addSimpleItemToCart(this)"><span class="btn-text">Agregar</span><span class="btn-check">✓ Agregado</span></button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-name="Coca-Cola Original" data-price="2500">
+          <div class="card-img-wrapper beverage"><img src="images/coca-cola-original.jpg" alt="Coca-Cola Original"></div>
+          <div class="card-content">
+            <h3>Coca-Cola Original</h3>
+            <p class="description">Lata 354 ml - Sabor Original.</p>
+            <div class="card-actions">
+              <div class="quantity-counter"><button type="button" class="btn-qty" onclick="adjustQty(this, -1)">-</button><span class="qty-number">1</span><button type="button" class="btn-qty" onclick="adjustQty(this, 1)">+</button></div>
+              <button type="button" class="btn-confirm" onclick="addSimpleItemToCart(this)"><span class="btn-text">Agregar</span><span class="btn-check">✓ Agregado</span></button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-name="Coca-Cola Cero" data-price="2500">
+          <div class="card-img-wrapper beverage"><img src="images/coca-cola-zero.jpg" alt="Coca-Cola Cero"></div>
+          <div class="card-content">
+            <h3>Coca-Cola Cero</h3>
+            <p class="description">Lata 354 ml - Zero Azúcar.</p>
+            <div class="card-actions">
+              <div class="quantity-counter"><button type="button" class="btn-qty" onclick="adjustQty(this, -1)">-</button><span class="qty-number">1</span><button type="button" class="btn-qty" onclick="adjustQty(this, 1)">+</button></div>
+              <button type="button" class="btn-confirm" onclick="addSimpleItemToCart(this)"><span class="btn-text">Agregar</span><span class="btn-check">✓ Agregado</span></button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- SECCIÓN CARRITO Y CHECKOUT -->
+    <section class="checkout-section">
+      <div class="cart-box">
+        <h2 class="cart-title">Tu selección</h2>
+        <p class="cart-subtitle">Tu pedido</p>
+
+        <div id="cart-items" class="cart-items-list">
+          <p class="empty-msg">Tu carrito está vacío. Elegí algo rico del menú.</p>
+        </div>
+
+        <div class="cart-summary">
+          <div class="summary-line">
+            <span>Total</span>
+            <span id="cart-total-display">$ 0</span>
+          </div>
+        </div>
+
+        <button type="button" class="btn-checkout-trigger" onclick="openModal()">Finalizar pedido</button>
+        <p class="checkout-note">El pedido se enviará por WhatsApp con el desglose completo.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- MODAL DE CHECKOUT -->
+  <div id="checkout-modal" class="modal-overlay">
+    <div class="modal-content">
+      <button type="button" class="modal-close" onclick="closeModal()">✕</button>
+      
+      <h3>¿Cómo recibís tu pedido?</h3>
+
+      <div class="delivery-options">
+        <button type="button" class="btn-delivery active" onclick="setDeliveryMode('retiro')">Pasar a retirar</button>
+        <button type="button" class="btn-delivery" onclick="setDeliveryMode('envio')">Envío a domicilio</button>
+      </div>
+
+      <div class="form-group">
+        <label for="client-name">Nombre del cliente</label>
+        <input type="text" id="client-name" placeholder="Tu nombre completo">
+      </div>
+
+      <div class="form-group">
+        <label for="client-address" id="address-label">Dirección o retiro por sucursal</label>
+        <input type="text" id="client-address" placeholder="Ej: Retiro por local / Av. Alem 123">
+      </div>
+
+      <div class="form-group">
+        <label for="client-notes">Notas del pedido</label>
+        <textarea id="client-notes" placeholder="Ej: Sin sal en las papas, timbre 2B..."></textarea>
+      </div>
+
+      <div class="modal-summary">
+        <div class="summary-line">
+          <span>Subtotal del pedido</span>
+          <span id="modal-subtotal">$ 0</span>
+        </div>
+        <div class="summary-line">
+          <span>Envío</span>
+          <span id="modal-shipping">$ 0</span>
+        </div>
+        <div class="summary-line total">
+          <span>Total final</span>
+          <span id="modal-total">$ 0</span>
+        </div>
+      </div>
+
+      <div class="transfer-info">
+        <strong>Transferencia</strong>
+        <p>Alias: <span>Miguel77c</span></p>
+      </div>
+
+      <button type="button" class="btn-send-whatsapp" onclick="sendOrderToWhatsApp()">Enviar pedido por WhatsApp</button>
+    </div>
+  </div>
+
+  <script>
+    let cart = [];
+    let deliveryCost = 0;
+
+    function adjustQty(button, change) {
+      const counter = button.parentElement.querySelector('.qty-number');
+      let currentVal = parseInt(counter.textContent);
+      currentVal += change;
+      if (currentVal < 1) currentVal = 1;
+      counter.textContent = currentVal;
+    }
+
+    function addBurgerToCart(button) {
+      const card = button.closest('.burger-card');
+      const name = card.dataset.name;
+      const qty = parseInt(card.querySelector('.qty-number').textContent);
+      
+      const selectedCombo = card.querySelector('.combo-selector input:checked');
+      const comboName = selectedCombo.value;
+      const basePrice = parseInt(selectedCombo.dataset.price);
+
+      let extras = [];
+      let extraPrice = 0;
+      card.querySelectorAll('.extras-group input:checked').forEach(cb => {
+        extras.push(cb.value);
+        extraPrice += parseInt(cb.dataset.price);
+      });
+
+      let removes = [];
+      card.querySelectorAll('.removes-group input:checked').forEach(cb => {
+        removes.push(cb.value);
+      });
+
+      const unitPrice = basePrice + extraPrice;
+
+      cart.push({
+        type: 'burger',
+        name,
+        qty,
+        comboName,
+        unitPrice,
+        extras,
+        removes
+      });
+
+      confirmAnimation(button);
+      updateCartDisplay();
+    }
+
+    function addSimpleItemToCart(button) {
+      const card = button.closest('[data-name]');
+      const name = card.dataset.name;
+      const price = parseInt(card.dataset.price);
+      const qty = parseInt(card.querySelector('.qty-number').textContent);
+
+      cart.push({
+        type: 'simple',
+        name,
+        qty,
+        unitPrice: price
+      });
+
+      confirmAnimation(button);
+      updateCartDisplay();
+    }
+
+    function confirmAnimation(button) {
+      button.classList.add('confirmed');
+      setTimeout(() => button.classList.remove('confirmed'), 1500);
+    }
+
+    function removeCartItem(index) {
+      cart.splice(index, 1);
+      updateCartDisplay();
+    }
+
+    function updateCartDisplay() {
+      const cartContainer = document.getElementById('cart-items');
+      const totalDisplay = document.getElementById('cart-total-display');
+
+      if (cart.length === 0) {
+        cartContainer.innerHTML = '<p class="empty-msg">Tu carrito está vacío. Elegí algo rico del menú.</p>';
+        totalDisplay.textContent = '$ 0';
+        return;
+      }
+
+      let html = '';
+      let total = 0;
+
+      cart.forEach((item, index) => {
+        const itemTotal = item.unitPrice * item.qty;
+        total += itemTotal;
+
+        html += `
+          <div class="cart-item">
+            <div class="cart-item-header">
+              <strong>${item.qty}x ${item.name}</strong>
+              <span>$ ${itemTotal.toLocaleString('es-AR')}</span>
+              <button class="btn-remove-item" onclick="removeCartItem(${index})">✕</button>
+            </div>
+        `;
+
+        if (item.type === 'burger') {
+          html += `<div class="cart-item-details">• Combo: ${item.comboName}</div>`;
+          if (item.extras.length > 0) {
+            html += `<div class="cart-item-details">• Extras: ${item.extras.join(', ')}</div>`;
+          }
+          if (item.removes.length > 0) {
+            html += `<div class="cart-item-details text-danger">• Quitar: ${item.removes.join(', ')}</div>`;
+          }
+        }
+
+        html += `</div>`;
+      });
+
+      cartContainer.innerHTML = html;
+      totalDisplay.textContent = `$ ${total.toLocaleString('es-AR')}`;
+    }
+
+    function openModal() {
+      if (cart.length === 0) {
+        alert('Por favor elegí al menos un producto antes de finalizar.');
+        return;
+      }
+      document.getElementById('checkout-modal').style.display = 'flex';
+      updateModalTotals();
+    }
+
+    function closeModal() {
+      document.getElementById('checkout-modal').style.display = 'none';
+    }
+
+    function setDeliveryMode(mode) {
+      const buttons = document.querySelectorAll('.btn-delivery');
+      buttons.forEach(btn => btn.classList.remove('active'));
+
+      if (mode === 'envio') {
+        buttons[1].classList.add('active');
+        deliveryCost = 5000;
+        document.getElementById('client-address').placeholder = 'Ej: Calle Falsa 123, B° Centro';
+      } else {
+        buttons[0].classList.add('active');
+        deliveryCost = 0;
+        document.getElementById('client-address').placeholder = 'Retiro por sucursal';
+      }
+
+      updateModalTotals();
+    }
+
+    function updateModalTotals() {
+      let subtotal = cart.reduce((acc, item) => acc + (item.unitPrice * item.qty), 0);
+      let total = subtotal + deliveryCost;
+
+      document.getElementById('modal-subtotal').textContent = `$ ${subtotal.toLocaleString('es-AR')}`;
+      document.getElementById('modal-shipping').textContent = deliveryCost > 0 ? `$ ${deliveryCost.toLocaleString('es-AR')}` : 'Gratis (Retiro)';
+      document.getElementById('modal-total').textContent = `$ ${total.toLocaleString('es-AR')}`;
+    }
+
+    function sendOrderToWhatsApp() {
+      const name = document.getElementById('client-name').value.trim();
+      const address = document.getElementById('client-address').value.trim();
+      const notes = document.getElementById('client-notes').value.trim();
+
+      if (!name) {
+        alert('Por favor ingresá tu nombre.');
+        return;
+      }
+
+      let subtotal = cart.reduce((acc, item) => acc + (item.unitPrice * item.qty), 0);
+      let total = subtotal + deliveryCost;
+      let deliveryModeText = deliveryCost > 0 ? 'Envío a domicilio (+$5.000)' : 'Pasar a retirar';
+
+      let message = `🍔 *NUEVO PEDIDO - MC BURGUERS*\n`;
+      message += `------------------------------------\n`;
+      message += `👤 *Cliente:* ${name}\n`;
+      message += `🛵 *Modalidad:* ${deliveryModeText}\n`;
+      message += `📍 *Dirección/Sucursal:* ${address || 'No especificada'}\n`;
+      if (notes) message += `📝 *Notas:* ${notes}\n`;
+      message += `------------------------------------\n`;
+      message += `📋 *DESGLOSE DEL PEDIDO:*\n\n`;
+
+      cart.forEach(item => {
+        const itemTotal = item.unitPrice * item.qty;
+        message += `• *${item.qty}x ${item.name}* - $${itemTotal.toLocaleString('es-AR')}\n`;
+        if (item.type === 'burger') {
+          message += `   └ Combo: ${item.comboName}\n`;
+          if (item.extras.length > 0) message += `   └ Extras: ${item.extras.join(', ')}\n`;
+          if (item.removes.length > 0) message += `   └ Sin: ${item.removes.join(', ')}\n`;
+        }
+      });
+
+      message += `\n------------------------------------\n`;
+      message += `💰 *Subtotal:* $${subtotal.toLocaleString('es-AR')}\n`;
+      message += `🛵 *Envío:* ${deliveryCost > 0 ? '$5.000' : '$0'}\n`;
+      message += `🔥 *TOTAL FINAL:* $${total.toLocaleString('es-AR')}\n`;
+      message += `------------------------------------\n`;
+      message += `💳 *Alias para Transferencia:* Miguel77c`;
+
+      const encodedMessage = encodeURIComponent(message);
+      window.open(`https://wa.me/5492996317139?text=${encodedMessage}`, '_blank');
+    }
+  </script>
+
+</body>
+</html>
